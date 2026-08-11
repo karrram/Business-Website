@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +22,26 @@
             <a href="#" class="font-semibold text-lg tracking-tight hover:text-indigo-400 transition-colors">
                 KD<span class="text-indigo-500">.</span>
             </a>
-            <nav class="flex space-x-6 text-sm font-medium text-zinc-400">
-                <a href="#about" class="hover:text-zinc-100 transition-colors">About</a>
-                <a href="#academic" class="hover:text-zinc-100 transition-colors">Academic</a>
-                <a href="#projects" class="hover:text-zinc-100 transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-zinc-100 transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
-            </nav>
+            
+            <div class="flex items-center space-x-4 sm:space-x-6">
+                <nav class="hidden sm:flex space-x-6 text-sm font-medium text-zinc-400" id="nav-links">
+                    <a href="#about" data-i18n="nav_about" class="hover:text-zinc-100 transition-colors">About</a>
+                    <a href="#academic" data-i18n="nav_academic" class="hover:text-zinc-100 transition-colors">Academic</a>
+                    <a href="#experience" data-i18n="nav_experience" class="hover:text-zinc-100 transition-colors">Experience</a>
+                    <a href="#projects" data-i18n="nav_projects" class="hover:text-zinc-100 transition-colors">Projects</a>
+                    <a href="#skills" data-i18n="nav_skills" class="hover:text-zinc-100 transition-colors">Skills</a>
+                    <a href="#contact" data-i18n="nav_contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Language Selector Dropdown -->
+                <div class="relative inline-block text-left">
+                    <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-zinc-900 text-zinc-300 text-xs font-medium border border-zinc-700/80 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-indigo-500 cursor-pointer">
+                        <option value="en">🌐 EN</option>
+                        <option value="de">🌐 DE</option>
+                        <option value="ar">🌐 AR</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -39,19 +52,19 @@
         <section class="space-y-6 pt-8">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
                 <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                Available for Freelance Projects
+                <span data-i18n="hero_status">Available for Freelance Projects</span>
             </div>
             <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white">
                 Karam Dugheish
             </h1>
-            <p class="text-xl sm:text-2xl text-zinc-400 font-light max-w-2xl leading-relaxed">
+            <p data-i18n="hero_desc" class="text-xl sm:text-2xl text-zinc-400 font-light max-w-2xl leading-relaxed">
                 Software Developer & Computer Science Student building efficient web applications, modern systems, and database architecture.
             </p>
             <div class="flex flex-wrap gap-4 pt-2">
-                <a href="#contact" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/20">
+                <a href="#contact" data-i18n="hero_cta_contact" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/20">
                     Get in Touch
                 </a>
-                <a href="#projects" class="px-6 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-medium text-sm border border-zinc-800 transition-all">
+                <a href="#projects" data-i18n="hero_cta_projects" class="px-6 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-medium text-sm border border-zinc-800 transition-all">
                     View Projects
                 </a>
             </div>
@@ -61,29 +74,29 @@
 
         <!-- 2. About Section -->
         <section id="about" class="space-y-4">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Introduction</h2>
-            <h3 class="text-2xl font-semibold text-white">Dedicated to building intelligent software & data-driven systems.</h3>
-            <p class="text-zinc-400 leading-relaxed max-w-3xl">
+            <h2 data-i18n="about_tag" class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Introduction</h2>
+            <h3 data-i18n="about_heading" class="text-2xl font-semibold text-white">Dedicated to building intelligent software & data-driven systems.</h3>
+            <p data-i18n="about_p1" class="text-zinc-400 leading-relaxed max-w-3xl">
                 I am a 4th-year Computer Science student specializing in Data Science and Machine Learning. Driven by curiosity and a commitment to practical engineering, I thrive on solving complex technical challenges—whether that means training predictive models, designing scalable database architectures, or engineering modern web applications.
             </p>
-            <p class="text-zinc-400 leading-relaxed max-w-3xl">
+            <p data-i18n="about_p2" class="text-zinc-400 leading-relaxed max-w-3xl">
                 My approach to software engineering centers on high determination, continuous learning, and clear teamwork. I value transparent communication, adaptable problem-solving, and collaborating closely with cross-functional teams to build reliable, business-focused software solutions.
             </p>
         </section>
 
         <!-- 3. Academic Background -->
         <section id="academic" class="space-y-6">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Academic Background</h2>
+            <h2 data-i18n="academic_tag" class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Academic Background</h2>
             
             <div class="grid grid-cols-1 gap-4">
                 <!-- University 1 -->
                 <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-3">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h3 class="text-xl font-semibold text-white">B.Sc. in Computer Science (4th Year)</h3>
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">German-Jordanian University (Amman, Jordan)</span>
+                        <h3 data-i18n="acad_degree_1" class="text-xl font-semibold text-white">B.Sc. in Computer Science (4th Year)</h3>
+                        <span data-i18n="acad_uni_1" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">German-Jordanian University (Amman, Jordan)</span>
                     </div>
-                    <p class="text-sm text-indigo-400 font-medium">Specialization: Data Science & Machine Learning</p>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
+                    <p data-i18n="acad_spec_1" class="text-sm text-indigo-400 font-medium">Specialization: Data Science & Machine Learning</p>
+                    <p data-i18n="acad_desc_1" class="text-zinc-400 text-sm leading-relaxed">
                         Rigorous academic foundation in algorithmic complexity, data structures, machine learning workflows, predictive analytics, and enterprise database systems.
                     </p>
                 </div>
@@ -91,45 +104,85 @@
                 <!-- Exchange Year -->
                 <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-3">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h3 class="text-xl font-semibold text-white">International Exchange Year</h3>
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Hochschule Niederrhein (Krefeld, Germany)</span>
+                        <h3 data-i18n="acad_degree_2" class="text-xl font-semibold text-white">International Exchange Year</h3>
+                        <span data-i18n="acad_uni_2" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Hochschule Niederrhein (Krefeld, Germany)</span>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
+                    <p data-i18n="acad_desc_2" class="text-zinc-400 text-sm leading-relaxed">
                         Completing an integrated exchange year as part of the curriculum, expanding practical engineering application, cross-cultural team collaboration, and international academic coursework.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Projects & Experience Section (Added from CV) -->
+        <!-- 4. Work Experience Section -->
+        <section id="experience" class="space-y-6">
+            <h2 data-i18n="experience_tag" class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Work Experience</h2>
+            
+            <div class="grid grid-cols-1 gap-4">
+                <!-- SAMCO Internship -->
+                <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                        <div>
+                            <h3 data-i18n="exp_title_1" class="text-xl font-semibold text-white">IT Loss Prevention Intern</h3>
+                            <p data-i18n="exp_company_1" class="text-sm text-indigo-400 font-medium">Saudi Arabian Marketing Company (SAMCO) – Farm Superstores</p>
+                        </div>
+                        <span data-i18n="exp_date_1" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">August – September 2025</span>
+                    </div>
+                    
+                    <ul class="list-disc list-inside text-zinc-400 text-sm space-y-2 leading-relaxed">
+                        <li data-i18n="exp_bullet_1">Worked directly with real-time enterprise database systems using TOAD and SQL.</li>
+                        <li data-i18n="exp_bullet_2">Acquired and applied advanced techniques for handling, querying, and structuring large enterprise datasets (Big Data).</li>
+                        <li data-i18n="exp_bullet_3">Analyzed data using custom functions, charts, and visualizations in MS Excel to generate actionable technical and business reports.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">SQL</span>
+                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">TOAD</span>
+                        <span data-i18n="tag_db" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Enterprise Databases</span>
+                        <span data-i18n="tag_da" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Data Analytics</span>
+                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">MS Excel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section -->
         <section id="projects" class="space-y-6">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Projects & Applied Experience</h2>
+            <h2 data-i18n="projects_tag" class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Projects & Applied Experience</h2>
             
             <div class="grid grid-cols-1 gap-4">
                 <!-- Project 1: Fast Food POS System -->
-                <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-3">
+                <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h3 class="text-xl font-semibold text-white">Fast Food Point of Sale (POS) System</h3>
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Academic Graduation Project</span>
+                        <h3 data-i18n="proj_title_1" class="text-xl font-semibold text-white">Fast Food Point of Sale (POS) System</h3>
+                        <span data-i18n="proj_type_1" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Academic Graduation Project</span>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
+                    <p data-i18n="proj_desc_1" class="text-zinc-400 text-sm leading-relaxed">
                         Designed and implemented a full-featured Point of Sale application specifically optimized for fast-food operational workflows. Integrated predictive analytics and algorithms to deliver real-time sales reporting and inventory optimization.
                     </p>
+
+                    <div class="pt-1">
+                        <a href="https://owklimited.netlify.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+                            <span data-i18n="proj_link_1">Visit Senior Project Team Website</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+
                     <div class="flex flex-wrap gap-2 pt-1">
                         <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Microsoft SQL Server</span>
                         <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">C# / .NET</span>
-                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Data Analytics</span>
-                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">System Architecture</span>
+                        <span data-i18n="tag_da" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Data Analytics</span>
+                        <span data-i18n="tag_sa" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">System Architecture</span>
                     </div>
                 </div>
 
                 <!-- Project 2: Interactive Terminal Game -->
                 <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-3">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h3 class="text-xl font-semibold text-white">Interactive Terminal Application</h3>
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Software Engineering Project</span>
+                        <h3 data-i18n="proj_title_2" class="text-xl font-semibold text-white">Interactive Terminal Application</h3>
+                        <span data-i18n="proj_type_2" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Software Engineering Project</span>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
+                    <p data-i18n="proj_desc_2" class="text-zinc-400 text-sm leading-relaxed">
                         Engineered a lightweight terminal-based game environment written in C++. Focused on clean object-oriented architecture, efficient memory management, and smooth user interaction within console boundaries.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-1">
@@ -142,30 +195,30 @@
                 <!-- Project 3: Predictive ML Data Pipeline -->
                 <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 sm:p-8 space-y-3">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h3 class="text-xl font-semibold text-white">Machine Learning & Predictive Modeling Pipeline</h3>
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Data Science Project</span>
+                        <h3 data-i18n="proj_title_3" class="text-xl font-semibold text-white">Machine Learning & Predictive Modeling Pipeline</h3>
+                        <span data-i18n="proj_type_3" class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Data Science Project</span>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
+                    <p data-i18n="proj_desc_3" class="text-zinc-400 text-sm leading-relaxed">
                         Built end-to-end predictive machine learning pipelines. Handled complex dataset cleaning, resolved class imbalance challenges, applied clustering algorithms, and generated actionable data visualizations.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-1">
                         <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Python</span>
                         <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Scikit-Learn</span>
                         <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Pandas / NumPy</span>
-                        <span class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Data Visualization</span>
+                        <span data-i18n="tag_dv" class="px-2.5 py-1 rounded text-xs font-medium bg-zinc-800 text-zinc-300">Data Visualization</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Skills Section -->
+        <!-- 6. Skills Section -->
         <section id="skills" class="space-y-6">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Technical Skills</h2>
+            <h2 data-i18n="skills_tag" class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Technical Skills</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Card 1 -->
                 <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-3">
-                    <h3 class="font-medium text-white text-base">Core Languages</h3>
+                    <h3 data-i18n="skill_cat_1" class="font-medium text-white text-base">Core Languages</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">C++</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">JavaScript / TypeScript</span>
@@ -177,18 +230,18 @@
 
                 <!-- Card 2 -->
                 <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-3">
-                    <h3 class="font-medium text-white text-base">Frontend & UI/UX</h3>
+                    <h3 data-i18n="skill_cat_2" class="font-medium text-white text-base">Frontend & UI/UX</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">React</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">HTML5 / Modern CSS</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Tailwind CSS</span>
-                        <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">UX Engineering</span>
+                        <span data-i18n="tag_ux" class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">UX Engineering</span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-3">
-                    <h3 class="font-medium text-white text-base">Backend & Databases</h3>
+                    <h3 data-i18n="skill_cat_3" class="font-medium text-white text-base">Backend & Databases</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Node.js</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Microsoft SQL Server</span>
@@ -199,24 +252,25 @@
 
                 <!-- Card 4 -->
                 <div class="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-3">
-                    <h3 class="font-medium text-white text-base">Tools & Workflows</h3>
+                    <h3 data-i18n="skill_cat_4" class="font-medium text-white text-base">Tools & Workflows</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Git / GitHub / GitLab</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">VS Code</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Cisco Packet Tracer</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Netlify</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">TOAD</span>
                         <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 text-zinc-300">Oracle Database</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Contact Section -->
+        <!-- 7. Contact Section -->
         <section id="contact" class="space-y-6 pt-6">
-            <div class="p-8 rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 space-y-6 text-center sm:text-left">
+            <div id="contact-box" class="p-8 rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 space-y-6 text-left">
                 <div class="space-y-2">
-                    <h2 class="text-2xl font-bold text-white">Let's Work Together</h2>
-                    <p class="text-zinc-400 text-sm max-w-xl">
+                    <h2 data-i18n="contact_title" class="text-2xl font-bold text-white">Let's Work Together</h2>
+                    <p data-i18n="contact_desc" class="text-zinc-400 text-sm max-w-xl">
                         Interested in collaborating, hiring me for freelance web development, or discussing software projects? Reach out directly via email.
                     </p>
                 </div>
@@ -224,11 +278,11 @@
                 <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
                     <a href="mailto:karamdughaish@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-zinc-950 font-semibold text-sm hover:bg-zinc-200 transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        Send an Email
+                        <span data-i18n="contact_btn_email">Send an Email</span>
                     </a>
                     
                     <a href="https://github.com/karrram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-zinc-800 text-zinc-200 font-medium text-sm hover:bg-zinc-700 border border-zinc-700 transition-colors">
-                        GitHub Profile
+                        <span data-i18n="contact_btn_github">GitHub Profile</span>
                     </a>
                 </div>
             </div>
@@ -238,8 +292,225 @@
 
     <!-- Footer -->
     <footer class="border-t border-zinc-800/60 py-8 text-center text-xs text-zinc-500">
-        <p>&copy; 2026 Karam Dugheish. All rights reserved.</p>
+        <p>&copy; 2026 Karam Dugheish. <span data-i18n="footer_rights">All rights reserved.</span></p>
     </footer>
+
+    <!-- Translation Engine Script -->
+    <script>
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_academic: "Academic",
+                nav_experience: "Experience",
+                nav_projects: "Projects",
+                nav_skills: "Skills",
+                nav_contact: "Contact",
+                hero_status: "Available for Freelance Projects",
+                hero_desc: "Software Developer & Computer Science Student building efficient web applications, modern systems, and database architecture.",
+                hero_cta_contact: "Get in Touch",
+                hero_cta_projects: "View Projects",
+                about_tag: "Introduction",
+                about_heading: "Dedicated to building intelligent software & data-driven systems.",
+                about_p1: "I am a 4th-year Computer Science student specializing in Data Science and Machine Learning. Driven by curiosity and a commitment to practical engineering, I thrive on solving complex technical challenges—whether that means training predictive models, designing scalable database architectures, or engineering modern web applications.",
+                about_p2: "My approach to software engineering centers on high determination, continuous learning, and clear teamwork. I value transparent communication, adaptable problem-solving, and collaborating closely with cross-functional teams to build reliable, business-focused software solutions.",
+                academic_tag: "Academic Background",
+                acad_degree_1: "B.Sc. in Computer Science (4th Year)",
+                acad_uni_1: "German-Jordanian University (Amman, Jordan)",
+                acad_spec_1: "Specialization: Data Science & Machine Learning",
+                acad_desc_1: "Rigorous academic foundation in algorithmic complexity, data structures, machine learning workflows, predictive analytics, and enterprise database systems.",
+                acad_degree_2: "International Exchange Year",
+                acad_uni_2: "Hochschule Niederrhein (Krefeld, Germany)",
+                acad_desc_2: "Completing an integrated exchange year as part of the curriculum, expanding practical engineering application, cross-cultural team collaboration, and international academic coursework.",
+                experience_tag: "Work Experience",
+                exp_title_1: "IT Loss Prevention Intern",
+                exp_company_1: "Saudi Arabian Marketing Company (SAMCO) – Farm Superstores",
+                exp_date_1: "August – September 2025",
+                exp_bullet_1: "Worked directly with real-time enterprise database systems using TOAD and SQL.",
+                exp_bullet_2: "Acquired and applied advanced techniques for handling, querying, and structuring large enterprise datasets (Big Data).",
+                exp_bullet_3: "Analyzed data using custom functions, charts, and visualizations in MS Excel to generate actionable technical and business reports.",
+                projects_tag: "Projects & Applied Experience",
+                proj_title_1: "Fast Food Point of Sale (POS) System",
+                proj_type_1: "Academic Graduation Project",
+                proj_desc_1: "Designed and implemented a full-featured Point of Sale application specifically optimized for fast-food operational workflows. Integrated predictive analytics and algorithms to deliver real-time sales reporting and inventory optimization.",
+                proj_link_1: "Visit Senior Project Team Website",
+                proj_title_2: "Interactive Terminal Application",
+                proj_type_2: "Software Engineering Project",
+                proj_desc_2: "Engineered a lightweight terminal-based game environment written in C++. Focused on clean object-oriented architecture, efficient memory management, and smooth user interaction within console boundaries.",
+                proj_title_3: "Machine Learning & Predictive Modeling Pipeline",
+                proj_type_3: "Data Science Project",
+                proj_desc_3: "Built end-to-end predictive machine learning pipelines. Handled complex dataset cleaning, resolved class imbalance challenges, applied clustering algorithms, and generated actionable data visualizations.",
+                skills_tag: "Technical Skills",
+                skill_cat_1: "Core Languages",
+                skill_cat_2: "Frontend & UI/UX",
+                skill_cat_3: "Backend & Databases",
+                skill_cat_4: "Tools & Workflows",
+                contact_title: "Let's Work Together",
+                contact_desc: "Interested in collaborating, hiring me for freelance web development, or discussing software projects? Reach out directly via email.",
+                contact_btn_email: "Send an Email",
+                contact_btn_github: "GitHub Profile",
+                footer_rights: "All rights reserved.",
+                tag_db: "Enterprise Databases",
+                tag_da: "Data Analytics",
+                tag_sa: "System Architecture",
+                tag_dv: "Data Visualization",
+                tag_ux: "UX Engineering"
+            },
+            de: {
+                nav_about: "Über mich",
+                nav_academic: "Ausbildung",
+                nav_experience: "Erfahrung",
+                nav_projects: "Projekte",
+                nav_skills: "Fähigkeiten",
+                nav_contact: "Kontakt",
+                hero_status: "Verfügbar für Freelance-Projekte",
+                hero_desc: "Softwareentwickler & Informatikstudent – Entwicklung effizienter Webanwendungen, moderner Systeme und Datenbankarchitekturen.",
+                hero_cta_contact: "Kontakt aufnehmen",
+                hero_cta_projects: "Projekte ansehen",
+                about_tag: "Einleitung",
+                about_heading: "Engagiert für intelligente Software & datengestützte Systeme.",
+                about_p1: "Ich bin Informatikstudent im 4. Jahr mit Spezialisierung auf Data Science und Machine Learning. Angetrieben von Neugier und Leidenschaft für praktische Softwareentwicklung löse ich komplexe technische Herausforderungen – sei es das Trainieren prädiktiver Modelle, der Entwurf skalierbarer Datenbankarchitekturen oder die Entwicklung moderner Webanwendungen.",
+                about_p2: "Mein Ansatz zur Softwareentwicklung basiert auf hoher Zielstrebigkeit, kontinuierlichem Lernen und klarer Teamarbeit. Ich lege großen Wert auf transparente Kommunikation, flexible Problemlösung und die enge Zusammenarbeit in interdisziplinären Teams zur Erstellung zuverlässiger, geschäftsorientierter Softwarelösungen.",
+                academic_tag: "Akademischer Hintergrund",
+                acad_degree_1: "B.Sc. in Informatik (4. Studienjahr)",
+                acad_uni_1: "German-Jordanian University (Amman, Jordanien)",
+                acad_spec_1: "Spezialisierung: Data Science & Machine Learning",
+                acad_desc_1: "Fundierte akademische Ausbildung in algorithmischer Komplexität, Datenstrukturen, Machine-Learning-Workflows, prädiktiver Analytik und enterprise Datenbank-Systemen.",
+                acad_degree_2: "Internationales Austauschjahr",
+                acad_uni_2: "Hochschule Niederrhein (Krefeld, Deutschland)",
+                acad_desc_2: "Absolvierung eines integrierten Austauschjahres als Teil des Studiums zur Vertiefung praktischer Softwareentwicklung, interkultureller Teamarbeit und internationaler Fachkurse.",
+                experience_tag: "Praktische Erfahrungen",
+                exp_title_1: "Praktikum im Bereich Loss Prevention in der IT-Abteilung",
+                exp_company_1: "Saudi Arabian Marketing Company (SAMCO) – Farm Superstores",
+                exp_date_1: "August – September 2025",
+                exp_bullet_1: "Arbeit mit Echtzeit-Unternehmensdaten unter Verwendung von TOAD und SQL.",
+                exp_bullet_2: "Erlernen und Anwenden verschiedener Techniken zum Umgang mit Big Data.",
+                exp_bullet_3: "Analysierte Big Data mithilfe von Funktionen, Diagrammen und Grafiken in MS Excel zur Verwendung in Berichten.",
+                projects_tag: "Projekte & Angewandte Erfahrung",
+                proj_title_1: "Fast-Food Point of Sale (POS) System",
+                proj_type_1: "Akademisches Abschlussprojekt",
+                proj_desc_1: "Entwurf und Implementierung einer vollgestopften POS-Anwendung, speziell optimiert für Fast-Food-Betriebsabläufe. Integration prädiktiver Analysen und Algorithmen für Echtzeit-Verkaufsberichte und Lageroptimierung.",
+                proj_link_1: "Website des Senior-Projektteams besuchen",
+                proj_title_2: "Interaktive Terminal-Anwendung",
+                proj_type_2: "Software-Engineering-Projekt",
+                proj_desc_2: "Entwicklung einer leichtgewichtigen terminalbasierten Spielumgebung in C++. Fokus auf saubere objektorientierte Architektur, effizientes Speicher-Management und flüssige CLI-Benutzerinteraktion.",
+                proj_title_3: "Machine Learning & Prädiktive Datenpipeline",
+                proj_type_3: "Data Science Projekt",
+                proj_desc_3: "Aufbau von End-to-End prädiktiven Machine-Learning-Pipelines. Bereinigung komplexer Datensätze, Behandlung von Class-Imbalance, Anwendung von Clustering-Algorithmen und Erstellung von Datenvisualisierungen.",
+                skills_tag: "Technische Fähigkeiten",
+                skill_cat_1: "Kernsprachen",
+                skill_cat_2: "Frontend & UI/UX",
+                skill_cat_3: "Backend & Datenbanken",
+                skill_cat_4: "Tools & Workflows",
+                contact_title: "Lass uns zusammenarbeiten",
+                contact_desc: "Interessiert an einer Zusammenarbeit, der Beauftragung von Freelance-Webentwicklung oder der Diskussion von Softwareprojekten? Schreiben Sie mir direkt eine E-Mail.",
+                contact_btn_email: "E-Mail senden",
+                contact_btn_github: "GitHub Profil",
+                footer_rights: "Alle Rechte vorbehalten.",
+                tag_db: "Enterprise-Datenbanken",
+                tag_da: "Datenanalyse",
+                tag_sa: "Systemarchitektur",
+                tag_dv: "Datenvisualisierung",
+                tag_ux: "UX-Engineering"
+            },
+            ar: {
+                nav_about: "من أنا",
+                nav_academic: "الخلفية الأكاديمية",
+                nav_experience: "الخبرة العملية",
+                nav_projects: "المشاريع",
+                nav_skills: "المهارات",
+                nav_contact: "التواصل",
+                hero_status: "متاح للمشاريع الحرة (Freelance)",
+                hero_desc: "مطور برمجيات وطالب علوم حاسوب متقن لبناء تطبيقات الويب الحديثة، الأنظمة البرمجية، ومعمارية قواعد البيانات.",
+                hero_cta_contact: "تواصل معي",
+                hero_cta_projects: "عرض المشاريع",
+                about_tag: "مقدمة",
+                about_heading: "متخصص في بناء البرمجيات الذكية والأنظمة القائمة على البيانات.",
+                about_p1: "أنا طالب في السنة الرابعة بتخصص علوم الحاسوب مع التركيز على علم البيانات وتعلم الآلة. مدفوع بالشغف والالتزام بالهندسة التطبيقية، وأبرع في حل التحديات التقنية المعقدة—سواء كان ذلك عبر تدريب النماذج التنبؤية، تصميم معمارية قواعد البيانات، أو تطوير تطبيقات الويب الحديثة.",
+                about_p2: "يعتمد أسلوبي في تطوير البرمجيات على الإصرار العالي، التعلم المستمر، والعمل الجماعي بفعالية. أهتم بالتواصل الشفاف، الحل المرن للمشكلات، والتعاون مع فرق العمل لبناء حلول برمجية موثوقة تلبي متطلبات الأعمال.",
+                academic_tag: "الخلفية الأكاديمية",
+                acad_degree_1: "بكالوريوس في علوم الحاسوب (السنة الرابعة)",
+                acad_uni_1: "الجامعة الألمانية الأردنية (عمان، الأردن)",
+                acad_spec_1: "التخصص: علم البيانات وتعلم الآلة",
+                acad_desc_1: "تأسيس أكاديمي متين في تحليل الخوارزميات، هياكل البيانات، سير عمل تعلم الآلة، التحليلات التنبؤية، وأنظمة قواعد البيانات للمؤسسات.",
+                acad_degree_2: "سنة التبادل الأكاديمي الدولي",
+                acad_uni_2: "جامعة نيدرهاين (كريفيلد، ألمانيا)",
+                acad_desc_2: "إكمال سنة تبادل أكاديمي مدمجة ضمن المنهاج الدراسي، بهدف توسيع التطبيق الهندسي والعمل الجماعي في بيئة دولية متكاملة.",
+                experience_tag: "الخبرة العملية",
+                exp_title_1: "تدريب عملي في قسم تكنولوجيا المعلومات (الوقاية من الخسائر)",
+                exp_company_1: "شركة التسويق العربية السعودية (سامكو) – أسواق المزرعة",
+                exp_date_1: "أغسطس – سبتمبر 2025",
+                exp_bullet_1: "العمل المباشر مع أنظمة قواعد بيانات المؤسسات في الوقت الفعلي باستخدام TOAD و SQL.",
+                exp_bullet_2: "تعلم وتطبيق تقنيات متقدمة للتعامل مع البيانات الضخمة (Big Data) واستعلامها.",
+                exp_bullet_3: "تحليل البيانات باستخدام الدوال والرسوم البيانية في برنامج MS Excel لإنشاء تقارير تقنية وإدارية دقيقة.",
+                projects_tag: "المشاريع والتطبيقات البرمجية",
+                proj_title_1: "نظام إدارة المبيعات (POS) للمطاعم السريعة",
+                proj_type_1: "مشروع التخرج الأكاديمي",
+                proj_desc_1: "تصميم وتنفيذ تطبيق متكامل لنقاط البيع مخصص لعمليات المطاعم السريعة. دمج التحليلات التنبؤية والخوارزميات لتقديم تقارير المبيعات وتحسين إدارة المخزون في الوقت الفعلي.",
+                proj_link_1: "زيارة موقع مشروع التخرج للفريق",
+                proj_title_2: "تطبيق تفاعلي عبر السطر البرمجي (Terminal)",
+                proj_type_2: "مشروع هندسة البرمجيات",
+                proj_desc_2: "تطوير بيئة ألعاب تفاعلية خفيفة تعمل من خلال السطر البرمجي باستخدام C++. التركيز على البناء البرمجي الموجه للكائنات (OOP)، إدارة الذاكرة، وواجهة المستخدم.",
+                proj_title_3: "خط معالجة البيانات ونماذج تعلم الآلة التنبؤية",
+                proj_type_3: "مشروع علم البيانات",
+                proj_desc_3: "بناء خطوط معالجة شاملة لتعلم الآلة. تنظيف البيانات المعقدة، حل مشكلات عدم توازن البيانات، تطبيق خوارزميات التجميع، وإنشاء تمثيل بصري دقيق للبيانات.",
+                skills_tag: "المهارات التقنية",
+                skill_cat_1: "لغات البرمجة الأساسية",
+                skill_cat_2: "الواجهات الأمامية و UI/UX",
+                skill_cat_3: "الخلفية البرمجية وقواعد البيانات",
+                skill_cat_4: "الأدوات وبينات العمل",
+                contact_title: "دعنا نعمل معاً",
+                contact_desc: "هل تبحث عن تعاون، أو توظيفي لتطوير موقع ويب، أو مناقشة مشاريع برمجية؟ تواصل معي مباشرة عبر البريد الإلكتروني.",
+                contact_btn_email: "إرسال بريد إلكتروني",
+                contact_btn_github: "الملف الشخصي على GitHub",
+                footer_rights: "جميع الحقوق محفوظة.",
+                tag_db: "قواعد بيانات المؤسسات",
+                tag_da: "تحليل البيانات",
+                tag_sa: "معمارية الأنظمة",
+                tag_dv: "تمثيل البيانات بصرياً",
+                tag_ux: "هندسة تجربة المستخدم"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const htmlRoot = document.getElementById('html-root');
+            const contactBox = document.getElementById('contact-box');
+
+            // Handle RTL layout for Arabic
+            if (lang === 'ar') {
+                htmlRoot.setAttribute('dir', 'rtl');
+                if (contactBox) {
+                    contactBox.classList.remove('text-left');
+                    contactBox.classList.add('text-right');
+                }
+            } else {
+                htmlRoot.setAttribute('dir', 'ltr');
+                if (contactBox) {
+                    contactBox.classList.remove('text-right');
+                    contactBox.classList.add('text-left');
+                }
+            }
+
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Keep select box synced
+            document.getElementById('lang-select').value = lang;
+
+            // Store preference in localStorage
+            localStorage.setItem('preferred_lang', lang);
+        }
+
+        // Initialize saved language or default to English
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'en';
+            changeLanguage(savedLang);
+        });
+    </script>
 
 </body>
 </html>
